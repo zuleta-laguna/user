@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- FONTS LINKS -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>usuario</title>
+    <style>
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        .card{
+            width: 30%;
+            height: 480px;
+            background-color: blueviolet;
+            color: #fff;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contentuser{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        #imgUser{
+          border-radius: 50%;
+          width: 150px;
+          height: 150px;
+        }
+        .centercontent{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .centercontent > h2{
+            font-size: 35px;
+            font-weight: 900;
+        }
+        .centercontent > h3{
+            font-size: 25px;
+            font-weight: 500;
+        }
+        .centeruser{
+            position: relative;
+        }
+        .buttonUser{
+            position: absolute;
+            bottom: 360px;
+            right: 120px;
+        }
+        button{
+            border: none;
+            outline: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        #delete{
+            background-color: red;
+        }
+        #edit{
+            background-color: rgb(250, 250, 250);
+        }
+        #Next-Back{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #Next-Back > button{
+           width: 180px;
+           height: 50px;
+           font-size: 25px;
+           font-weight: 800;
+           background-color: rgb(90, 131, 244);
+           color: #fff;
+           cursor: pointer;
+        }
+        #search{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .buscador{
+            width: 60%;
+            height: 40px;
+            background-color: cadetblue;
+            border-radius: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 30px;
+            padding: 5px;
+        }
+        .buscador > input{
+          width: 90%;
+          height: 100%;
+          background-color: cadetblue;
+          color: #fff;
+        }
+        .search{
+            border: none;
+            outline: none;
+        }
+        #svg-search > img{
+            width: 22px;
+        }
+        #svg-search > button{
+           border: none;
+           outline: none;
+           background: none;
+        }
+        .windowModal{
+           width: 100%;
+            height: 100vh;
+            position: fixed;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.408); 
+            display: none;
+            z-index: 1;
+        }
+        .positionModal{
+           width: 100%;
+           height: 100%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        .popup{
+            width: 50%;
+            height: 500px;
+            border-radius: 20px;
+            background-color: #fff;
+        }
+        .popup{
+            display: flex;
+            justify-content: center;
+            background-image: url('./images/alexander-grey-SavQfLRm4Do-unsplash.jpg');
+            background-position: center;
+            background-size: 700px;
+            background-repeat: no-repeat;
+            animation-name: popupanimation;
+            animation-duration: 1.2s;
+            position: relative;
+        }
+        @keyframes popupanimation {
+            0% {top: -100vh;}
+            100% {top: 0%;}
+        }
+        #inputEdit > h2{
+            font-size: 40px;
+            text-align: center;
+            font-weight: 900;
+        }
+        #inputEdit > input{
+            width: 466px;
+            height: 50px;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+        }
+        #inputEdit > button{
+            width: 266px;
+            height: 50px;
+            margin-top: 100px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            position: relative;
+            left: 200px;
+            background-color: #3578DE;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenido-Home">
+        <div class="windowModal">
+            <div class="positionModal">
+                <div class="popup">
+                 <div class="contentpopup"></div>
+                </div>
+            </div>
+        </div>
+        <div id="search">
+            <div class="buscador">
+             <div id="svg-search">
+              <button><img src="./images/search.svg" alt=""></button>
+             </div>
+             <input class="search" type="search">
+            </div>
+        </div>
+        <div id="Next-Back">
+            <button id="Back" onclick="previouspage()">Back</button>
+            <button id="Next" onclick="nextpage()">Next</button>
+            </div>
+        <div class="contentuser">
+           
+        </div>
+    </div>
+    <script src="./api.js"></script>
+</body>
+</html>
